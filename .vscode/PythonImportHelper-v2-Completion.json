@@ -1,0 +1,20 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "create_folder_structure",
+        "kind": 2,
+        "importPath": "src.project_setup",
+        "description": "src.project_setup",
+        "peekOfCode": "def create_folder_structure():\n    project_folder = './'\n    data_folder = 'data'\n    raw_folder = 'raw'\n    intermediate_folder = 'intermediate'\n    processed_folder = 'processed'\n    external_folder = 'external'\n    models_folder = 'models'\n    notebooks_folder = 'notebooks'\n    reports_folder = 'reports'",
+        "detail": "src.project_setup",
+        "documentation": {}
+    }
+]

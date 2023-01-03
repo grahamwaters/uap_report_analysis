@@ -5,6 +5,7 @@ def create_folder_structure():
     project_folder = './'
     data_folder = 'data'
     raw_folder = 'raw'
+    intermediate_folder = 'intermediate'
     processed_folder = 'processed'
     external_folder = 'external'
     models_folder = 'models'
@@ -43,8 +44,10 @@ def create_folder_structure():
         os.mkdir(f'{project_folder}/{data_folder}') # make the data folder
     if not os.path.exists(f'{project_folder}/{data_folder}/{raw_folder}'): # if the raw folder doesn't exist
         os.mkdir(f'{project_folder}/{data_folder}/{raw_folder}') # make the raw folder
+    if not os.path.exists(f'{project_folder}/{data_folder}/{intermediate_folder}'):
+        os.mkdir(f'{project_folder}/{data_folder}/{intermediate_folder}') # make the intermediate folder
     if not os.path.exists(f'{project_folder}/{data_folder}/{processed_folder}'):
-        os.mkdir(f'{project_folder}/{data_folder}/{processed_folder}')
+        os.mkdir(f'{project_folder}/{data_folder}/{processed_folder}') # make the processed folder
     if not os.path.exists(f'{project_folder}/{data_folder}/{external_folder}'): # if the external folder doesn't exist, make it
         os.mkdir(f'{project_folder}/{data_folder}/{external_folder}')
     if not os.path.exists(f'{project_folder}/{models_folder}'):
