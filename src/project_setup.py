@@ -60,6 +60,40 @@ def create_folder_structure():
         if file.endswith('.py'): # if the file ends with .py
             os.rename(file, f'{project_folder}/{src_folder}/{file}') # move the file into the src folder
 
+    # create the following notebooks in the notebooks folder
+    notebook_names = ['data_cleaning', 'data_exploration', 'data_preprocessing', 'feature_engineering', 'modeling', 'visualization']
+    for notebook in notebook_names:
+        if not os.path.exists(f'{project_folder}/{notebooks_folder}/{notebook}.ipynb'):
+            with open(f'{project_folder}/{notebooks_folder}/{notebook}.ipynb', 'w') as f:
+                pass
+
+    # create the following files in the src folder
+    src_file_names = ['test', 'train', 'predict']
+    for src_file in src_file_names:
+        if not os.path.exists(f'{project_folder}/{src_folder}/{src_file}.py'):
+            with open(f'{project_folder}/{src_folder}/{src_file}.py', 'w') as f:
+                pass
+
+
+
+    # in each subdirectory at level 1 of the project folder, create a folder_description.md file with the name of the folder as the title
+    for folder in os.listdir(project_folder):
+        if os.path.isdir(folder):
+            if not os.path.exists(f'{project_folder}/{folder}/folder_description.md'):
+                # # delete the simple_readme.md file if it exists
+                # if os.path.exists(f'{project_folder}/{folder}/simple_readme.md'):
+                #     os.remove(f'{project_folder}/{folder}/simple_readme.md')
+                with open(f'{project_folder}/{folder}/folder_description.md', 'w') as f:
+                    f.write(f'# {folder}')
+                    f.write('\n') # new line
+                    f.write('-' * (len(folder) + 10)) # write a line of dashes the length of the folder name
+            else: # if the folder_description.md file already exists in the folder (which it should), overwrite it in case the folder name has changed.
+                with open(f'{project_folder}/{folder}/folder_description.md', 'w') as f:
+                    f.write(f'# {folder}')
+                    f.write('\n') # new line
+                    f.write('-' * (len(folder) + 10)) # write a line of dashes the length of the folder name
+
+
 
 
 create_folder_structure()
