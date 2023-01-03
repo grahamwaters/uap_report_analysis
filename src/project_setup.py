@@ -2,7 +2,7 @@ import os
 # setup the folder structure
 
 def create_folder_structure():
-    project_folder = 'project_folder'
+    project_folder = './'
     data_folder = 'data'
     raw_folder = 'raw'
     processed_folder = 'processed'
@@ -11,10 +11,10 @@ def create_folder_structure():
     notebooks_folder = 'notebooks'
     reports_folder = 'reports'
     src_folder = 'src'
-    data_src_folder = 'data'
-    features_src_folder = 'features'
-    models_src_folder = 'models'
-    visualization_src_folder = 'visualization'
+    # data_src_folder = 'data'
+    # features_src_folder = 'features'
+    # models_src_folder = 'models'
+    # visualization_src_folder = 'visualization'
 
     # make the files
     if not os.path.exists(os.path.join(project_folder, 'environment.yml')):
