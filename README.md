@@ -71,14 +71,13 @@ Visualization: Use Matplotlib to visualize the clusters on a 2D or 3D plane.
 
 ### NUFORC Data Preparation
 
+<!-- notebooks/data_cleaning.ipynb -->
+To prepare the NUFOC data for analysis, we ran the `notebooks/data_cleaning.ipynb` notebook. This notebook does the following:
+
+* list what it does
+
+**Result: the cleaned file ** is saved to `data/processed/ufos_clean.csv`.
+
 ### MUFON Data Preparation
 
-## Data Exploration
-
-### NUFORC Data Exploration
-
-### MUFON Data Exploration
-
-## Modeling
-
-### NUFORC Modeling
+This is more difficult than the NUFORC data. It also does not include latitude and longitude natively, as these have to be derived from city names which does not lend itself to a high accuracy score. The data is also not as clean as the NUFORC data, and requires more preprocessing and wrangling.
