@@ -1,11 +1,107 @@
 [
     {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "KMeans",
+        "importPath": "sklearn.cluster",
+        "description": "sklearn.cluster",
+        "isExtraImport": true,
+        "detail": "sklearn.cluster",
+        "documentation": {}
+    },
+    {
+        "label": "TfidfVectorizer",
+        "importPath": "sklearn.feature_extraction.text",
+        "description": "sklearn.feature_extraction.text",
+        "isExtraImport": true,
+        "detail": "sklearn.feature_extraction.text",
+        "documentation": {}
+    },
+    {
+        "label": "OneHotEncoder",
+        "importPath": "sklearn.preprocessing",
+        "description": "sklearn.preprocessing",
+        "isExtraImport": true,
+        "detail": "sklearn.preprocessing",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "os",
         "description": "os",
         "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "notebooks.modeling",
+        "description": "notebooks.modeling",
+        "peekOfCode": "data = pd.read_csv('./data/processed/nuforc_clean_plusfeatures.csv')\n# one-hot encode the shape of the UAPs\nenc = OneHotEncoder()\nshape_encoded = enc.fit_transform(data[['shape']])\n# vectorize the text data using TF-IDF\nvectorizer = TfidfVectorizer()\ntext_vectors = vectorizer.fit_transform(data['comments'])\n# combine the encoded shape, text vectors, and location and time information\nX = np.concatenate((shape_encoded.toarray(), text_vectors.toarray(), data[['latitude', 'longitude', 'year', 'month', 'day']].values), axis=1)\n# perform k-means clustering",
+        "detail": "notebooks.modeling",
+        "documentation": {}
+    },
+    {
+        "label": "enc",
+        "kind": 5,
+        "importPath": "notebooks.modeling",
+        "description": "notebooks.modeling",
+        "peekOfCode": "enc = OneHotEncoder()\nshape_encoded = enc.fit_transform(data[['shape']])\n# vectorize the text data using TF-IDF\nvectorizer = TfidfVectorizer()\ntext_vectors = vectorizer.fit_transform(data['comments'])\n# combine the encoded shape, text vectors, and location and time information\nX = np.concatenate((shape_encoded.toarray(), text_vectors.toarray(), data[['latitude', 'longitude', 'year', 'month', 'day']].values), axis=1)\n# perform k-means clustering\nkmeans = KMeans(n_clusters=5)\nkmeans.fit(X)",
+        "detail": "notebooks.modeling",
+        "documentation": {}
+    },
+    {
+        "label": "shape_encoded",
+        "kind": 5,
+        "importPath": "notebooks.modeling",
+        "description": "notebooks.modeling",
+        "peekOfCode": "shape_encoded = enc.fit_transform(data[['shape']])\n# vectorize the text data using TF-IDF\nvectorizer = TfidfVectorizer()\ntext_vectors = vectorizer.fit_transform(data['comments'])\n# combine the encoded shape, text vectors, and location and time information\nX = np.concatenate((shape_encoded.toarray(), text_vectors.toarray(), data[['latitude', 'longitude', 'year', 'month', 'day']].values), axis=1)\n# perform k-means clustering\nkmeans = KMeans(n_clusters=5)\nkmeans.fit(X)",
+        "detail": "notebooks.modeling",
+        "documentation": {}
+    },
+    {
+        "label": "vectorizer",
+        "kind": 5,
+        "importPath": "notebooks.modeling",
+        "description": "notebooks.modeling",
+        "peekOfCode": "vectorizer = TfidfVectorizer()\ntext_vectors = vectorizer.fit_transform(data['comments'])\n# combine the encoded shape, text vectors, and location and time information\nX = np.concatenate((shape_encoded.toarray(), text_vectors.toarray(), data[['latitude', 'longitude', 'year', 'month', 'day']].values), axis=1)\n# perform k-means clustering\nkmeans = KMeans(n_clusters=5)\nkmeans.fit(X)",
+        "detail": "notebooks.modeling",
+        "documentation": {}
+    },
+    {
+        "label": "text_vectors",
+        "kind": 5,
+        "importPath": "notebooks.modeling",
+        "description": "notebooks.modeling",
+        "peekOfCode": "text_vectors = vectorizer.fit_transform(data['comments'])\n# combine the encoded shape, text vectors, and location and time information\nX = np.concatenate((shape_encoded.toarray(), text_vectors.toarray(), data[['latitude', 'longitude', 'year', 'month', 'day']].values), axis=1)\n# perform k-means clustering\nkmeans = KMeans(n_clusters=5)\nkmeans.fit(X)",
+        "detail": "notebooks.modeling",
+        "documentation": {}
+    },
+    {
+        "label": "X",
+        "kind": 5,
+        "importPath": "notebooks.modeling",
+        "description": "notebooks.modeling",
+        "peekOfCode": "X = np.concatenate((shape_encoded.toarray(), text_vectors.toarray(), data[['latitude', 'longitude', 'year', 'month', 'day']].values), axis=1)\n# perform k-means clustering\nkmeans = KMeans(n_clusters=5)\nkmeans.fit(X)",
+        "detail": "notebooks.modeling",
+        "documentation": {}
+    },
+    {
+        "label": "kmeans",
+        "kind": 5,
+        "importPath": "notebooks.modeling",
+        "description": "notebooks.modeling",
+        "peekOfCode": "kmeans = KMeans(n_clusters=5)\nkmeans.fit(X)",
+        "detail": "notebooks.modeling",
         "documentation": {}
     },
     {

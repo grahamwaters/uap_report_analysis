@@ -60,6 +60,16 @@ Visualization: Use Matplotlib to visualize the clusters on a 2D or 3D plane.
 |Feature|Type|Dataset|Description|
 |---|---|---|---|
 |datetime|object|NUFORC|Date and time of the sighting|
+| city|object|NUFORC|City where the sighting occurred|
+| state|object|NUFORC|State where the sighting occurred|
+| shape|object|NUFORC|Shape of the object sighted|
+| duration (seconds)|float|NUFORC|Duration of the sighting in seconds|
+| duration (hours/min)|object|NUFORC|Duration of the sighting in hours and minutes|
+| summary|object|NUFORC|Summary of the sighting|
+| posted|object|NUFORC|Date and time the report was posted|
+| latitude|float|NUFORC|Latitude of the sighting|
+| longitude|float|NUFORC|Longitude of the sighting|
+
 
 ### MUFON Data Dictionary
 
@@ -81,3 +91,19 @@ To prepare the NUFOC data for analysis, we ran the `notebooks/data_cleaning.ipyn
 ### MUFON Data Preparation
 
 This is more difficult than the NUFORC data. It also does not include latitude and longitude natively, as these have to be derived from city names which does not lend itself to a high accuracy score. The data is also not as clean as the NUFORC data, and requires more preprocessing and wrangling.
+
+## Feature Engineering
+
+### NUFORC Feature Engineering
+
+Run the `notebooks/feature_engineering.ipynb` notebook to create the features for the model. This notebook does the following:
+
+* list what it does
+
+It produces a data file called `data/processed/nuforc_clean_plusfeatures.csv` that is used in the modeling notebook.
+
+### MUFON Feature Engineering
+
+None yet for MUFON data.
+
+## Modeling
